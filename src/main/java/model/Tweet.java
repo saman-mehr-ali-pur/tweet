@@ -1,7 +1,6 @@
 package model;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 @Entity
 @Table(name="tweet")
 
@@ -11,11 +10,11 @@ public class Tweet {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name="text",columnDefinition = "varchar(280)")
+    @Column(name="tweet",columnDefinition = "varchar(280)")
     private String text;
 
     @ManyToOne
-    @JoinColumn(name="u_id",referencedColumnName = "user_id")
+    //@JoinColumn(name="u_id",referencedColumnName = "t_id")
     private User user;
 
     public Long getId() {

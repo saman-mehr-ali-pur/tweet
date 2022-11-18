@@ -1,8 +1,9 @@
 package model;
 
 
-import jakarta.persistence.*;
 
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
 @Table(name="users")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="user_id")
     private Long id ;
     @Column(name="user_name" , unique = true)
@@ -18,9 +20,9 @@ public class User {
     private String name;
     @Column(name="passWord")
     private String passWord;
-    @OneToMany
-    @JoinColumn(name = "t_id",referencedColumnName = "text")
-    private List<Tweet> myTweets = new ArrayList<Tweet>();
+
+    //@JoinColumn(name = "t_id",referencedColumnName = "tweet")
+    //private List<Tweet> myTweets = new ArrayList<Tweet>();
 
 
 
